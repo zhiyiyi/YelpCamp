@@ -12,10 +12,14 @@
     </div>
     <ul>
         <% for (let campground of campgrounds) { %>
-        <li><a href="/campgrounds/<%= campground._id %>"><%= campground.title %></a></li>
+        <li><a href="/campgrounds/<%= campground._id %>"><% if(campground.title) { %>
+            <%=campground.title  %>
+            <% } else { %>
+                <%="None" %>
+                <% } %>
+        </a></li>
         <% } %>
     </ul>
-    <a href="/campgrounds">All campgrounds</a>
     
 </body>
 </html>
